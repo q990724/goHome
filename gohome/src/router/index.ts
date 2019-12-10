@@ -6,6 +6,8 @@ import Register from "../views/cfy/Register.vue";
 
 import Font from "../components/ak/Font.vue";
 
+
+
 import Find from "../views/mhp/Find.vue";
 
 Vue.use(VueRouter);
