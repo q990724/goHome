@@ -2,15 +2,12 @@
   <div class="parent">
 
     
-      <div class="frame">
-        <div class="tab" v-show="active == 0">1</div>
-        <div class="tab" v-show="active == 1"><app-find /></div>
-        <div class="tab" v-show="active == 2">1</div>
-        <div class="tab" v-show="active == 3"><app-me /></div>
-      </div>
-    
-    
-
+    <div class="frame">
+      <div class="tab" v-show="active == 0"><app-index /></div>
+      <div class="tab" v-show="active == 1"><app-find /></div>
+      <div class="tab" v-show="active == 2">1</div>
+      <div class="tab" v-show="active == 3"><app-me /></div>
+    </div>
     <div class="footer">
       <van-tabbar v-model="active">
         <van-tabbar-item v-for="(item,i) of icons" :key="i">
@@ -26,6 +23,7 @@
 // import Index from "123";
 import Me from "./cfy/Me.vue";
 import Find from "./mhp/Find.vue";
+import Index from "./wtq/Index.vue";
 export default {
   data(){
     return {
@@ -56,7 +54,8 @@ export default {
   },
   components: {
     "app-me" : Me,
-    "app-find" : Find
+    "app-find" : Find,
+    "app-index" : Index
   }
 }
 </script>

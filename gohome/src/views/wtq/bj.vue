@@ -45,7 +45,7 @@ export default {
 </script>
 <style scoped>
 #bj .van-row{
-  height:18.75rem;
+  /* height:18.75rem; */
 }
 .item{
   padding:.5rem;
@@ -78,13 +78,13 @@ export default {
   font-size:.6rem;
   text-decoration: line-through;
 }
-  .img{
-    width:100%;
-    height:9rem;
-    position: relative;
-  }
-  .img img{
-    border-radius: 1rem;
-    width:100%;
-  }
+.img{
+  width:100%;
+  /* height:9rem; */
+  position: relative;
+}
+.img img{
+  border-radius: 1rem;
+  width:100%;
+}
 </style>

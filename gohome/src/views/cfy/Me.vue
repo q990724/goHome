@@ -37,7 +37,9 @@
         </van-grid>
       </div>
       <!-- 成为房东 -->
-      <van-button type="primary" block>我也要成为房东</van-button>
+      <van-button type="info" block>我也要成为房东</van-button>
+      <!-- 退出登录 -->
+      <van-button type="danger" block>退出登录</van-button>
     </div>
   </div>
 </template>
@@ -63,11 +65,15 @@ export default {
   },
   methods: {
 
-  }
+  },
+  
 }
 </script>
 
 <style scoped lang="scss">
+  .van-button{
+    margin: .8rem 0;
+  }
   .list{
     background-color: #f7f7f7;
     padding:1rem;
@@ -94,7 +100,6 @@ export default {
 
   .top1 .van-grid{
     padding: 1rem 0.5rem;
-    // background: #f2f2f2;
   }
 
   .top1 .van-grid-item{
@@ -102,7 +107,7 @@ export default {
   }
 
   .parent{
-    height: 280px;
+    height: 13.75rem;
     position: relative;
     overflow: hidden;
   }
