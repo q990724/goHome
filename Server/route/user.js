@@ -26,6 +26,7 @@ router.post("/login",(req,res) => {
       res.send({code : 500 , msg : "查询出错！Error" , err: err});
     }else{
       if(result.length > 0){
+        req.session.uid = result[0].uid;
         res.send({code : 200 , msg : "登录成功" , result : result[0]});
       }else{
         res.send({code : 300 , msg : "账号或密码错误"});
@@ -86,4 +87,13 @@ router.post("/verification",(req,res) => {
    })
 });
 
+
+//检测用户是否登录
+router.get("/checkLogin",(req,res) => {
+  if(!req.session.uid){
+    res.send({code : 301, msg : "未登录!"});
+  }else{
+    res.send({code : 200, msg : "已登录!"});
+  }
+})
 module.exports = router;
