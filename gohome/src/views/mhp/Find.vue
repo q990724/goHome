@@ -9,7 +9,7 @@
       <div class="swi-title">住民宿，上自由行</div>
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(image, index) in images" :key="index">
-          <img class="swi-img" v-lazy="image" />
+          <img class="swi-img"/>
         </van-swipe-item>
       </van-swipe>
     </div>
