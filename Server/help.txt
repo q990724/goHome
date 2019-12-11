@@ -1,0 +1,18 @@
+城市表 cities   city_id  city_name
+民宿表 homestay city_id  home_id  home_bigImg home_title home_subtitle discount home_lastPrice grade tags home_address  environment(环境)  inTime outTime landlord_id
+房东表 landlord_id landlord_name landlord_appraise landlord_produce
+
+
+1-北京
+2-上海
+3-成都
+4-西安
+5-重庆
+6-杭州
+7-南京
+8-广州
+9-哈尔滨
+10-辽宁
+
+
+

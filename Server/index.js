@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors=require("cors");
 
 var user = require("./route/user");
-
+var home = require("./route/home");
 app.use(cors({
   origin:['http://localhost:8080',"http://127.0.0.1:8080",'http://localhost:8081',"http://127.0.0.1:8081"],
   credentials:true
@@ -27,3 +27,4 @@ app.listen(5050,()=>{
 });
 
 app.use("/user",user);
+app.use("/home",home);
