@@ -16,27 +16,13 @@
     <!-- 3.城市探索 -->
     <div>
       <div class="swi-title">城市探索</div>
-      <div class="city-intr">
-        <van-row>
-          <van-col span="12">
-            <div class="city-img">
-              <img src="../../assets/images/find/city/c1.jpg" alt="">
-            </div>
-            <span class="city-name">成都</span>
-          </van-col>
-          <van-col span="12">
-            <div class="city-img">
-              <img src="../../assets/images/find/city/c3.jpg" alt="">
-            </div>
-            <span>重庆</span>
-          </van-col>
-        </van-row>
-      </div>
+      <city></city>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import city from "./city.vue";
 export default Vue.extend({
   data() {
     return {
@@ -46,6 +32,9 @@ export default Vue.extend({
         require("../../assets/images/find/swipe/3.jpg")
       ]
     };
+  },
+  components:{
+    "city":city
   }
 });
 </script>
@@ -69,12 +58,5 @@ export default Vue.extend({
   font-size: 0.977099rem;
   font-weight: bold;
 }
-.city-intr{
-  padding:0 1.010687rem;
-}
-.city-img>img{
-  width:95%;
-  border-radius: 10%;
-  
-}
+
 </style>
