@@ -10,6 +10,7 @@
 <script>
 import Addid from "./Addid.vue"
 import Pimgs from "./Pimgs.vue"
+
   export default {
     components : {
       "addid":Addid,

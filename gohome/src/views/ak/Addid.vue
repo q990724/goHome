@@ -2,19 +2,173 @@
   <div>
     <van-tabs v-model="active">
       <van-tab class="Image" title="北京">
-        <img src="../../assets/images/p1.jpg" alt="">
         <div class="dex">
-          <a href="#">详情</a>
-          <a href="#">评价</a>
-          <a href="#">可定日期</a>
-          <a href="#">位置</a>
-          <a href="#">需知</a>
-          <a href="#">房东</a>
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
         </div>
       </van-tab>
-      <van-tab title="成都">内容 2</van-tab>
-      <van-tab title="杭州">内容 3</van-tab>
-      <van-tab title="青岛">内容 4</van-tab>
+      <van-tab class="Image" title="上海">
+        <div class="dex">
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
+        </div>
+      </van-tab> 
+      <van-tab class="Image" title="辽宁">
+        <div class="dex">
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
+        </div>
+      </van-tab>
+      <van-tab class="Image" title="杭州">
+        <div class="dex">
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
+        </div>
+      </van-tab>
+      <van-tab class="Image" title="天津">
+        <div class="dex">
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
+        </div>
+      </van-tab>
+      <van-tab class="Image" title="石家庄">
+        <div class="dex">
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
+        </div>
+      </van-tab>
+      <van-tab class="Image" title="重庆">
+        <div class="dex">
+          <div class="nw">
+            <div>
+              <van-swipe @change="onChange">
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+                <van-swipe-item>
+                  <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+            <p class="firstTitle">xxxxxxxx介绍</p>
+            <p class="lastTitle">时间的萨克的角度讲</p>
+          </div>
+        </div>
+      </van-tab>
     </van-tabs>
   </div>
 </template>
@@ -24,27 +178,39 @@ export default {
   data() {
     return {
       active: 0
-    };
+    }
+  },
+  methods: {
+    onChange(index) {
+      
+    }
   }
+
 }
 </script>
 <style scoped>
 .dex{
-  position: relative;
-}
-.dex>a{
-  color:#008489;
-  position: absolute;
-  justify-content: space-around;
-}
-.dex>a:nth-child(1){
-  color: #808080;
-  font-size: 16px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
 }
 .Image{text-align: center}
-.Image>img{
+.nw>img{
   width: 350px;
   height: 260px;
   border-radius: 5px;
+}
+.firstTitle{
+  margin: 0;padding: 0;
+  font-size:20px;
+  position: absolute;
+  padding-left: 15px;
+  font-weight: bold;
+}
+.lastTitle{
+  font-size:16px;
+  position: absolute;
+  padding:5px 0 0 15px;
+  color: #808080;
 }
 </style>
