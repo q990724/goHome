@@ -94,6 +94,7 @@ export default {
       myThis.userApis.login(myThis.username, myThis.password).then((res: any) => {
         if (res.code == 200) {
           Toast.success(res.msg);
+          sessionStorage.setItem("user",JSON.stringify(res.result));
           // 跳转到个人中心
         } else if (res.code == 300) {
           Toast.fail(res.msg);
