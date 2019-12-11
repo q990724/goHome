@@ -32,7 +32,7 @@
     <!-- 下方城市推荐 -->
     <div class="tehui">
       <h3 style="color:#484848;margin-bottom:0">为您推荐</h3>
-      <van-tabs v-model="active" color="#008489">
+      <van-tabs v-model="chooseTab" color="#008489">
         <van-tab title="北京">
           <!-- 子组件 -->
           <bj></bj>
@@ -57,7 +57,8 @@ import bjVue from './bj.vue';
 export default {
   data(){
     return {
-      value:""
+      value:"",
+      chooseTab:0
     }
   },
   methods: {
