@@ -22,9 +22,8 @@
           </div>
         </div>
       </van-col>
-
-      <!-- 循环生成 -->
-      <van-col span="12">span: 8</van-col>
+      <!-- 查看更多按钮 -->
+      
     </van-row>
   </div>
 </template>
@@ -44,9 +43,6 @@ export default {
 }
 </script>
 <style scoped>
-#bj .van-row{
-  height:18.75rem;
-}
 .item{
   padding:.5rem;
 }
@@ -80,7 +76,6 @@ export default {
 }
   .img{
     width:100%;
-    height:9rem;
     position: relative;
   }
   .img img{

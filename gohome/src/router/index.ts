@@ -4,9 +4,10 @@ import VueRouter from "vue-router";
 import Login from "../views/cfy/Login.vue";
 import Register from "../views/cfy/Register.vue";
 
-// import Font from "../components/ak/Font.vue";
+ import Font from "../views/ak/Font.vue";
 
 import Index from '../views/wtq/Index.vue'
+import todoParent from '../views/wtq/TodoParent.vue'
 
 
 import Find from "../views/mhp/Find.vue";
@@ -14,11 +15,12 @@ import Find from "../views/mhp/Find.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  // { path: "/Font", component: Font },
+   { path: "/Font", component: Font },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
   { path: "/find", component: Find },
   { path: "/index", component: Index },
+  { path: "/todoParent", component: todoParent },
 ];
 
 const router = new VueRouter({
