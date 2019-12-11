@@ -7,6 +7,7 @@ import Me from "../views/cfy/Me.vue";
 import Parent from "../views/parent.vue";
 import Font from "../views/ak/Font.vue";
 
+import Index from '../views/wtq/Index.vue'
 
 
 import Find from "../views/mhp/Find.vue";
@@ -20,7 +21,7 @@ const routes = [
   { path: "/register", component: Register },
   { path: "/find", component: Find },
   { path: "/me", component: Me},
-  
+  { path: "/index", component: Index },
 ];
 
 const router = new VueRouter({
