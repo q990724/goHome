@@ -22,7 +22,16 @@
           required
         />
       </van-cell-group>
-      <van-button plain type="info" block round @click="login">登录</van-button>
+      <van-button
+        plain
+        type="info"
+        block
+        round
+        @click="login"
+        :disabled="!isActive"
+      >
+        登录
+      </van-button>
       <div class="other-login">
         <a href="javascript:;" @click="otherLogin">其他登录方式</a>
         <a href="javascript:;" @click="register">注册新用户</a>
@@ -61,30 +70,51 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
+// import Vue from "vue";
+import User from "../../assets/api/user";
+import { Toast } from "vant";
+export default {
   data() {
     return {
       username: "",
       password: "",
-      show: false
+      show: false,
+      userApis: new User(),
+      isActive: true,
+      arr: [
+        // require("../")
+      ],
     };
   },
   methods: {
     //登录
-    login() {},
+    login() {
+      let myThis:any = this;
+      myThis.isActive = false;
+      myThis.userApis.login(myThis.username, myThis.password).then((res: any) => {
+        if (res.code == 200) {
+          Toast.success(res.msg);
+          // 跳转到个人中心
+        } else if (res.code == 300) {
+          Toast.fail(res.msg);
+        }
+        myThis.isActive = true;
+      });
+    },
     //显示其他登录方式
     otherLogin(): void {
-      this.show = !this.show;
+      let myThis:any = this;
+      myThis.show = !myThis.show;
     },
     //注册
     register(): void {
-      this.$router.push("register");
+      let myThis:any = this;
+      myThis.$router.push("register");
     },
     //忘记密码
     forget(): void {}
   }
-});
+};
 </script>
 
 <style scoped lang="scss">

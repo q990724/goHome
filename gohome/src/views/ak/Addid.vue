@@ -29,8 +29,17 @@ export default {
 }
 </script>
 <style scoped>
+.dex{
+  position: relative;
+}
+.dex>a{
+  color:#008489;
+  position: absolute;
+  justify-content: space-around;
+}
 .dex>a:nth-child(1){
   color: #808080;
+  font-size: 16px;
 }
 .Image{text-align: center}
 .Image>img{

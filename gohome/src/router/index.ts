@@ -4,7 +4,7 @@ import VueRouter from "vue-router";
 import Login from "../views/cfy/Login.vue";
 import Register from "../views/cfy/Register.vue";
 
-import Font from "../components/ak/Font.vue";
+import Font from "../views/ak/Font.vue";
 
 
 

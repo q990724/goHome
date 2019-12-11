@@ -1,13 +1,15 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { Lazyload } from "vant";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Lazyload);
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
-});
+  state: {
+  },
+  mutations: {
+  },
+  actions: {
+  },
+  modules: {
+  }
+})

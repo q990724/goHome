@@ -42,7 +42,7 @@
         />
         <van-field
           v-model="email_text"
-          type="password"
+          type="text"
           label="邮箱验证码"
           clearable
           center
@@ -81,7 +81,10 @@ export default {
       pwdStrongColor: 0,
       pwdStrongColors: ["#FF4500", "#F4A460", "#6495ED", "#32CD32"],
       isSend: true,
-      countDown: 60
+      countDown: 60,
+      arr: [
+        // require("../")
+      ]
     };
   },
   methods: {
