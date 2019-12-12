@@ -195,7 +195,7 @@ export default {
   flex-direction: column;
 }
 .Image{text-align: center}
-.nw>img{
+.Img{
   width: 350px;
   height: 260px;
   border-radius: 5px;

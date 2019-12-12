@@ -30,10 +30,10 @@
           <div>
             <!-- 房间介绍 -->
             <div>
-              <div>
+              <div class="homes">
                 <p>上海·整间LOFT</p>
               </div>
-              <div>
+              <div class="msg">
                 <p>
                   【歐陽·免服务费—新天地精致loft】新天地地铁口/虹桥机场直达/毗邻田子坊思南公馆/步行可达外滩
                 </p>
@@ -41,7 +41,7 @@
             </div>
             <van-divider />
             <!-- 优惠活动 -->
-            <div>
+            <div class="huodong">
               <div>
                 <p>享受 12月6日 - 12月19日 期间的 9 折优惠</p>
                 <p>在 8 天内完成预订，锁定限时好价</p>
@@ -130,6 +130,33 @@ export default {
 }
 </script>
 <style scoped>
+.huodong{
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 20px;
+}
+.huodong>div:first-child>p:first-child{
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: #103;
+}
+.huodong>div:first-child>p:last-child{
+  color: #808080;
+}
+.msg>p{
+  font-size: 18px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+.homes{
+  margin: 5px 0;
+}
+.homes>p{
+  font-size: 12px;
+  padding-left: 10px;
+}
+p{padding: 0;margin: 0}
 ul{
   width: 80%;
   display: flex;
@@ -141,8 +168,8 @@ ul{
   position: relative;
 }
 .btn{
-  position:fixed;
-  top: 35%;left: 70%;
+  position:absolute;
+  top: 24%;left: 73%;
 }
 .btn>button{
   border-radius: 3px;
@@ -154,7 +181,7 @@ ul{
 }
 .tTop{
   width: 90%;
-  position:fixed;
+  position:absolute;
   top: 1%;left: 6%;
   display: flex;
   justify-content: space-between;
