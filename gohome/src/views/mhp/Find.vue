@@ -8,8 +8,8 @@
     <div>
       <div class="swi-title">住民宿，上自由行</div>
       <van-swipe :autoplay="3000">
-        <van-swipe-item v-for="(image, index) in images" :key="index">
-          <img class="swi-img"/>
+        <van-swipe-item v-for="(image, index) in images11" :key="index">
+          <img class="swi-img" :src="image"/>
         </van-swipe-item>
       </van-swipe>
     </div>
@@ -26,7 +26,7 @@ import city from "./city.vue";
 export default Vue.extend({
   data() {
     return {
-      images: [
+      images11: [
         require("../../assets/images/find/swipe/1.jpg"),
         require("../../assets/images/find/swipe/2.jpg"),
         require("../../assets/images/find/swipe/3.jpg")
@@ -47,7 +47,7 @@ export default Vue.extend({
 }
 .swi-img{
   width:100%;
-  height:15.320611rem;
+  height:10.320611rem;
   border-radius: 8%;
   box-sizing: border-box;
   padding:0 1.010687rem;
