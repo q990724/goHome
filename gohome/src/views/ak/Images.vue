@@ -126,10 +126,79 @@
                 <span>退房时间 :</span>
                 <span>12:00</span>
               </div>
+              <div>
+                <p class="p">自助入住</p>
+                <span>通过密码钥匙盒自助入住</span>
+              </div>
+            </div>
+            <van-divider />
+            <!-- 设施 -->
+            <div class="more">
+              <div>
+                <img src="../../assets/images/ak/wifi.png" alt="">
+                <p>无线网络</p>
+              </div>
+              <div>
+                <img src="../../assets/images/ak/coko.png" alt="">
+                <p>厨房</p>
+              </div>
+              <div>
+                <img src="../../assets/images/ak/xifashui.png" alt="">
+                <p>洗发水</p>
+              </div>
+              <div>
+                <img src="../../assets/images/ak/more.png" alt="">
+                <p>更多设施</p>
+              </div>
             </div>
           </div>
         </van-tab>
-        <van-tab title="评价">内容 2</van-tab>
+        <van-tab title="评价">
+          <div class="pingjia">
+            <div>
+              <h2>评价</h2>
+            </div>
+            <div>
+              <van-rate v-model="value" readonly color="blue"/>
+              <span>84条评价</span>
+            </div>
+            <div class="ipt">
+              <form action="/">
+                <van-search
+                  v-model="inputMsg"
+                  placeholder="搜索评价"
+                  height="25"
+                  @search="onSearch"
+                  @cancel="onCancel"
+                />
+              </form>
+            </div>
+            <div class="miaoshi">
+              <div><span>如实描述</span></div>
+              <div><van-rate v-model="value" readonly color="blue"/></div>
+            </div>
+            <div class="miaoshi">
+              <div><span>沟通交流</span></div>
+              <div><van-rate v-model="value" readonly color="blue"/></div>
+            </div>
+            <div class="miaoshi">
+              <div><span>干净卫生</span></div>
+              <div><van-rate v-model="value" readonly color="blue"/></div>
+            </div>
+            <div class="miaoshi">
+              <div><span>位置便利</span></div>
+              <div><van-rate v-model="value" readonly color="blue"/></div>
+            </div>
+            <div class="miaoshi">
+              <div><span>入住顺利</span></div>
+              <div><van-rate v-model="value" readonly color="blue"/></div>
+            </div>
+            <div class="miaoshi">
+              <div><span>高性价比</span></div>
+              <div><van-rate v-model="value" readonly color="blue"/></div>
+            </div>
+          </div>
+        </van-tab>
         <van-tab title="可定日期">内容 1</van-tab>
         <van-tab title="位置">内容 2</van-tab>
         <van-tab title="须知">内容 1</van-tab>
@@ -142,6 +211,8 @@
 export default {
   data() {
     return {
+      inputMsg:"",
+      value: 5,
       show: false,
       index: 0,
       images: [
@@ -166,6 +237,36 @@ export default {
 }
 </script>
 <style scoped>
+.miaoshi{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  margin-top: 12px;
+}
+.miaoshi>div>span{
+  font-size: 18px;
+}
+.ipt{
+  margin-left: -20px;
+  height: 43px;
+  line-height: 43px;
+}
+.pingjia{
+  padding-left: 20px; 
+}
+.more{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.more>div>img{
+  width:36px;
+  height:36px;
+}
+.p{
+  margin-top: 10px;
+}
 .timess{
   padding: .9375rem 2rem;
 }
