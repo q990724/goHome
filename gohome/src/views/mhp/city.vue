@@ -35,14 +35,19 @@ export default Vue.extend({
 .c>.van-col:nth-child(2n){
   padding-left:.610687rem;
 }
+.c>.van-col:nth-child(n){
+  padding-right:.610687rem;
+}
 .city-intr{
-  padding:0 1.010687rem;
+  /* padding:0 1.010687rem; */
+  margin: .305344rem .610687rem;
 }
 .city-img>img{
-  width:96%;
-  height:15.320611rem;
-  border-radius: 10%;
-  // padding-left:.610687rem;
+  width:100%;
+  height:10.320611rem;
+  border-radius: 5%;
+  /* padding:.610687rem; */
+
 }
 </style>
 
