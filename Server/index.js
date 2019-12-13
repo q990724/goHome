@@ -6,6 +6,8 @@ const cors=require("cors");
 
 var user = require("./route/user");
 var home = require("./route/home");
+var experience = require("./route/experience");
+
 app.use(cors({
   origin:['http://localhost:8080',"http://127.0.0.1:8080",'http://localhost:8081',"http://127.0.0.1:8081"],
   credentials:true
@@ -28,3 +30,4 @@ app.listen(5050,()=>{
 
 app.use("/user",user);
 app.use("/home",home);
+app.use("/experience",experience);
