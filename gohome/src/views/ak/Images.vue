@@ -240,32 +240,32 @@ export default {
 .miaoshi{
   display: flex;
   justify-content: space-between;
-  padding-right: 20px;
-  margin-top: 12px;
+  padding-right: 1.221374rem;
+  margin-top: .732824rem;
 }
 .miaoshi>div>span{
-  font-size: 18px;
+  font-size: 1.099237rem;
 }
 .ipt{
-  margin-left: -20px;
-  height: 43px;
-  line-height: 43px;
+  margin-left: -1.221374rem;
+  height: 2.625954rem;
+  line-height: 2.625954rem;
 }
 .pingjia{
-  padding-left: 20px; 
+  padding-left: 1.221374rem; 
 }
 .more{
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: .610687rem;
 }
 .more>div>img{
-  width:36px;
-  height:36px;
+  width:2.198473rem;
+  height:2.198473rem;
 }
 .p{
-  margin-top: 10px;
+  margin-top: .610687rem;
 }
 .timess{
   padding: .9375rem 2rem;

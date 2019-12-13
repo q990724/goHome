@@ -190,27 +190,27 @@ export default {
 </script>
 <style scoped>
 .dex{
-  height: 320px;
+  height: 19.541985rem;
   display: flex;
   flex-direction: column;
 }
 .Image{text-align: center}
 .Img{
-  width: 350px;
-  height: 260px;
-  border-radius: 5px;
+  width: 21.374046rem;
+  height: 15.877863rem;
+  border-radius: .305344rem;
 }
 .firstTitle{
   margin: 0;padding: 0;
-  font-size:20px;
+  font-size:1.221374rem;
   position: absolute;
-  padding-left: 15px;
+  padding-left: .916031rem;
   font-weight: bold;
 }
 .lastTitle{
-  font-size:16px;
+  font-size:.977099rem;
   position: absolute;
-  padding:5px 0 0 15px;
+  padding:.305344rem 0 0 .916031rem;
   color: #808080;
 }
 </style>

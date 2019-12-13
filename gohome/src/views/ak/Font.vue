@@ -20,10 +20,10 @@ import Pimgs from "./Pimgs.vue"
 </script>
 <style scoped>
 .van-nav-bar__title.van-ellipsis{
-  font-size: 20px;
+  font-size: 1.221374rem;
 }
 .van-icon-arrow-left:before{
-  font-size: 20px;
+  font-size: 1.221374rem;
   color: #808080;
 }
 </style>
