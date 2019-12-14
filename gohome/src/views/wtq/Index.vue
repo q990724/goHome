@@ -32,9 +32,9 @@
     <!-- 下方城市推荐 -->
     <div class="tehui">
       <h3 style="color:#484848;margin-bottom:6px;margin-left:8px">为您推荐</h3>
-      <van-tabs v-model="chooseTab" color="#008489">
+      <!-- <van-tabs v-model="chooseTab" color="#008489">
         <van-tab title="古城">
-          <!-- 子组件 -->
+          子组件 
           <bj></bj>
           <van-button type="primary" size="large">显示更多北京的房源</van-button>
         </van-tab>
@@ -95,10 +95,16 @@
           <br>
           <br>
         </van-tab>
-      </van-tabs>
-      <bj></bj>
+      </van-tabs> -->
+      <!-- <bj></bj> -->
+      <van-tabbar v-model="active" :fixed="false">
+        <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+        <van-tabbar-item icon="search">标签</van-tabbar-item>
+        <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+        <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+      </van-tabbar>
       <van-button type="primary" size="large">显示更多北京的房源</van-button>
-      <bj></bj>
+      <!-- <bj></bj> -->
       <van-button type="primary" size="large">显示更多北京的房源</van-button>
 
       <h3 style="color:#484848;margin-left:8px;margin-bottom:8px">爱彼迎旅行保障</h3>
@@ -132,7 +138,7 @@
           </p>
         </div>
       </div>
-      <bj></bj>
+      <!-- <bj></bj> -->
       <van-button type="primary" size="large">显示更多北京的房源</van-button>
     </div>
     <!-- 底部信息 -->
@@ -167,13 +173,14 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import bj from './bj.vue'
 import bjVue from './bj.vue';
 import home from "../../assets/api/home"
 export default {
   data() {
     return {
+      home: new home(),
       value: "",
       chooseTab: 0,
       isShow: false,
@@ -185,22 +192,24 @@ export default {
         {value:"韩语(韩语)"},
         {value:"德语"},
         {value:"英文"},
-        
-      ]
+      ],
+      cities: [],
+      homes: [],
+      active: 0
     };
   },
   methods: {
     onFocus() {
-      this.$router.push("/searchCity");
+      (this as any).$router.push("/searchCity");
     },
     clickShow() {
-     this.isShow = !this.isShow;
+     (this as any).isShow = !(this as any).isShow;
     },
-    change(e){
+    change(e: any){
       if(e.target.nodeName === "LI"){
       console.log(1);
-        this.content = e.target.dataset.value;
-        this.isShow = false;
+        (this as any).content = e.target.dataset.value;
+        (this as any).isShow = false;
       }
     }
   },
@@ -208,12 +217,26 @@ export default {
     bj : bj
   },
   created() {
-    this.home.getCities().then(res=>{
+    //获取城市名称
+    (this as any).home.getCities().then((res: any)=>{
       if(res.code == 200){
-        this.cities = res.result;
-        console.log(this.cities);
+        (this as any).cities = res.result;
+        console.log((this as any).cities);
       }
-    })
+    });
+    //获取民宿信息
+    (this as any).home.getHomes().then((res: any)=>{
+      //对民宿信息分类
+      let homeClass:any = {};
+      res.result.forEach((e:any) => {
+        if(!homeClass[e.city_id]){
+          homeClass[e.city_id] = [];
+        }
+        homeClass[e.city_id].push(e);
+
+        
+      });
+    });
   }
 };
 </script>
