@@ -120,6 +120,7 @@ export default {
     //返回首页
     back(): void {
       (this as any).$router.push("/");
+      (this as any).$store.commit("setIndexActive",0);
     }
   }
 };

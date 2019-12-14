@@ -8,6 +8,7 @@ axios.defaults.withCredentials = true;
 // };
 
 class Config {
+  static server:string = "http://127.0.0.1:5050/";
   static axios: AxiosStatic = axios;
 }
 

@@ -4,7 +4,7 @@
     <div class="parent" >
       <div class="bg" 
         :style="{
-            'background-image' : `url(http://127.0.0.1:5050/${bg})`
+            'background-image' : `url(${bg})`
           }">
       </div>
       <div class="user-msg">
@@ -18,7 +18,7 @@
         </div>
         <!-- 用户头像 -->
         <div class="pic">
-          <img :src="`http://127.0.0.1:5050/${userMsg.pic ? userMsg.pic : bg}`" width="60">
+          <img :src="`${bg}`" width="60">
         </div>
         <!-- 用户名称 -->
         <h5 class="uname">{{userMsg.user_name}}</h5>
@@ -86,6 +86,7 @@
 <script lang="ts">
 import {Toast} from "vant";
 import User from "../../assets/api/user";
+import config from "../../assets/config";
 export default {
   data() {
     return {
@@ -104,7 +105,7 @@ export default {
       ],
       user: null,
       userMsg : {},
-      bg : "images/user_avatar/unknow-man.jpg",
+      bg : config.server + "images/user_avatar/unknow-man.jpg",
       isShowDetail: false,
       showDetailHeight: {height: "45rem"},
       hideDetailHeight: {height: "0px",padding: "0"},
@@ -161,7 +162,7 @@ export default {
         if(json){
           that.userMsg = JSON.parse(json);
         }
-        (this as any).bg = that.userMsg.pic;
+        (this as any).bg =config.server + that.userMsg.pic;
         var time = Number(sessionStorage.getItem("login_time"));
         console.log(new Date(time).toLocaleString());
         (this as any).login_time = new Date(time).toLocaleString();
