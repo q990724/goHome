@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="title">
-      <van-nav-bar title="登录" left-text="返回" left-arrow />
+      <van-nav-bar title="登录" left-text="返回" left-arrow @click-left="back"/>
     </div>
     <div class="inputArea">
       <h5>GoHome在线登录</h5>
@@ -95,6 +95,9 @@ export default {
         if (res.code == 200) {
           Toast.success(res.msg);
           sessionStorage.setItem("user",JSON.stringify(res.result));
+          sessionStorage.setItem("login_time",JSON.stringify(new Date().getTime()));
+          myThis.$router.push("/");
+          myThis.$store.commit("setIndexActive",3);
           // 跳转到个人中心
         } else if (res.code == 300) {
           Toast.fail(res.msg);
@@ -113,7 +116,11 @@ export default {
       myThis.$router.push("register");
     },
     //忘记密码
-    forget(): void {}
+    forget(): void {},
+    //返回首页
+    back(): void {
+      (this as any).$router.push("/");
+    }
   }
 };
 </script>

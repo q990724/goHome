@@ -8,7 +8,7 @@
     <div>
       <div class="swi-title">住民宿，上自由行</div>
       <van-swipe :autoplay="3000">
-        <van-swipe-item v-for="(image, index) in images11" :key="index">
+        <van-swipe-item v-for="(image, index) in images1" :key="index">
           <img class="swi-img" :src="image"/>
         </van-swipe-item>
       </van-swipe>
@@ -23,10 +23,11 @@
 <script lang="ts">
 import Vue from "vue";
 import city from "./city.vue";
+import config from '../../assets/config.ts';
 export default Vue.extend({
   data() {
     return {
-      images11: [
+      images1: [
         require("../../assets/images/find/swipe/1.jpg"),
         require("../../assets/images/find/swipe/2.jpg"),
         require("../../assets/images/find/swipe/3.jpg")

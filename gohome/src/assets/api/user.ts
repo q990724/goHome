@@ -62,6 +62,23 @@ class User {
       })()
     });
   }
+
+  //退出登录
+  public quitLogin(): Promise<any> {
+    return new Promise((resolve,reject)=>{
+      Config.axios({
+        url: this.prev + "/quitLogin"
+      }).then((res: any)=>{
+        if(res.data.code == 200){
+          resolve(true);
+        }else{
+          resolve(false);
+        }
+      }).catch(err=>{
+        reject(false);
+      });
+    });
+  }
 }
 
 export default User;

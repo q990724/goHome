@@ -96,4 +96,14 @@ router.get("/checkLogin",(req,res) => {
     res.send({code : 200, msg : "已登录!"});
   }
 })
+
+//退出登录
+router.get("/quitLogin",(req,res)=>{
+  req.session.uid = null;
+  res.send({code : 200 , msg : "退出成功"});
+});
 module.exports = router;
+
+/*
+  :class = "{active : true , again:!true}"
+*/
