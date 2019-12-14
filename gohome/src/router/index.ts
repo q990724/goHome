@@ -17,14 +17,14 @@ import Find from "../views/mhp/Find.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/" , component: Parent},
-  { path: "/Images", component: Images },
+  { path: "/" , component: Parent , index: 1},
+  { path: "/Images", component: Images},
   { path: "/Font", component: Font },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
   { path: "/find", component: Find },
   { path: "/me", component: Me},
-  { path: "/index", component: Index },
+  { path: "/index", component: Index, index: 2},
   { path: "/todoParent", component: todoParent },
 ];
 

@@ -1,15 +1,13 @@
 <template>
   <div class="parent">
-
-    
     <div class="frame">
-      <div class="tab" v-show="active == 0"><app-index /></div>
-      <div class="tab" v-show="active == 1"><app-find /></div>
-      <div class="tab" v-show="active == 2">1</div>
-      <div class="tab" v-show="active == 3"><app-me /></div>
+      <div class="tab" v-if="active == 0"><app-index /></div>
+      <div class="tab" v-if="active == 1"><app-find /></div>
+      <div class="tab" v-if="active == 2">1</div>
+      <div class="tab" v-if="active == 3"><app-me /></div>
     </div>
     <div class="footer">
-      <van-tabbar v-model="active">
+      <van-tabbar v-model="active" @change="change">
         <van-tabbar-item v-for="(item,i) of icons" :key="i">
           <span>{{item.name}}</span>
           <img slot="icon" slot-scope="props" :src="props.active ? item.active : item.inactive" />
@@ -27,7 +25,7 @@ import Index from "./wtq/Index.vue";
 export default {
   data(){
     return {
-      active : 0,
+      active : (this as any).$store.getters.getIndexActive,
       icons: [
         {
           name : "首页",
@@ -56,11 +54,32 @@ export default {
     "app-me" : Me,
     "app-find" : Find,
     "app-index" : Index
+  },
+  methods: {
+    change(index: any) {
+      (this as any).$store.commit("setIndexActive",index);
+    }
+  },
+  created() {
+    console.log(this.$router);
+    // console.log(this.$route);
+    let myIndex;
+    let path = this.$route.path;
+    this.$router.options.routes.forEach(ele => {
+      if(ele.path == path){
+        myIndex = ele.index;
+        return;
+      }
+    });
+    console.log(myIndex);
   }
 }
 </script>
 
 <style scoped lang="scss">
+.frame{
+  margin-bottom: 35px;
+}
 .slide-fade {
   position: absolute;
   left: 0;
