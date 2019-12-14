@@ -23,6 +23,7 @@
 <script lang="ts">
 import Vue from "vue";
 import city from "./city.vue";
+import config from '../../assets/config.ts';
 export default Vue.extend({
   data() {
     return {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2019-12-11 15:31:11
+-- Generation Time: 2019-12-14 03:01:28
 -- 服务器版本： 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -48,6 +48,29 @@ INSERT INTO `cities` (`city_id`, `city_name`) VALUES
 (8, '广州'),
 (9, '哈尔滨'),
 (10, '辽宁');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `experience`
+--
+
+CREATE TABLE `experience` (
+  `eid` int(11) DEFAULT NULL,
+  `title` varchar(128) NOT NULL,
+  `position` varchar(128) NOT NULL,
+  `pic` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `experience`
+--
+
+INSERT INTO `experience` (`eid`, `title`, `position`, `pic`) VALUES
+(1, '和老奶奶学做手工意大利面', '意大利罗马', 'https://z1.muscache.cn/pictures/1f333053-a5d5-4f80-a6e9-9c85bfeca9b8.jpg'),
+(2, '专业DJ带你踏上音乐历史文化之旅', 'Havana, Cuba', 'https://z1.muscache.cn/pictures/0b9e1f25-086d-4dcc-953f-0f0c26ce9187.jpg'),
+(3, '和当地厨师一起制作墨西哥魔力酱', '墨西哥城', 'https://z1.muscache.cn/pictures/a522c9d4-80f9-499b-bb5a-a352b9152b6d.jpg'),
+(4, '在当地人的带领下探索金色沙漠', '阿曼马斯喀特', 'https://z1.muscache.cn/pictures/054731cf-40b7-4a5d-ae3a-70add71354e4.jpg');
 
 -- --------------------------------------------------------
 
