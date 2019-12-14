@@ -13,3 +13,20 @@ router.get("/getExperience",(req,res)=>{
 })
 
 module.exports=router;
+
+
+
+var x=0;
+var foo={
+    x:1,
+    bar:function(){
+        console.log(this.x);
+        var that=this;
+        return function(){
+            console.log(this.x)
+            console.log(that.x)
+        }
+    }
+}
+foo.bar();
+foo.bar()()
