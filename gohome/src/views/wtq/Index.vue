@@ -184,6 +184,7 @@ export default {
         {value:"韩语(韩语)"},
         {value:"德语"},
         {value:"英文"},
+        
       ]
     };
   },
