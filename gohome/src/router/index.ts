@@ -9,23 +9,24 @@ import Font from "../views/ak/Font.vue";
 import Images from "../views/ak/Images.vue";
 
 import Index from '../views/wtq/Index.vue'
-import todoParent from '../views/wtq/TodoParent.vue'
-
+import todoParent from '../views/wtq/TodoParent.vue';
+import searchCity from "../views/wtq/SearchCity.vue";
 
 import Find from "../views/mhp/Find.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/" , component: Parent , index: 1},
+  { path: "/" , component: Parent},
   { path: "/Images", component: Images},
   { path: "/Font", component: Font },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
   { path: "/find", component: Find },
   { path: "/me", component: Me},
-  { path: "/index", component: Index, index: 2},
+  { path: "/index", component: Index},
   { path: "/todoParent", component: todoParent },
+  { path: "/searchCity", component: searchCity }
 ];
 
 const router = new VueRouter({

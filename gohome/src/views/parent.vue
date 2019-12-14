@@ -60,25 +60,12 @@ export default {
       (this as any).$store.commit("setIndexActive",index);
     }
   },
-  created() {
-    console.log(this.$router);
-    // console.log(this.$route);
-    let myIndex;
-    let path = this.$route.path;
-    this.$router.options.routes.forEach(ele => {
-      if(ele.path == path){
-        myIndex = ele.index;
-        return;
-      }
-    });
-    console.log(myIndex);
-  }
 }
 </script>
 
 <style scoped lang="scss">
 .frame{
-  margin-bottom: 35px;
+  margin-bottom: 50px;
 }
 .slide-fade {
   position: absolute;

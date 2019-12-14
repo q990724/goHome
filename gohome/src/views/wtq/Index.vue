@@ -32,8 +32,8 @@
     <!-- 下方城市推荐 -->
     <div class="tehui">
       <h3 style="color:#484848;margin-bottom:0">为您推荐</h3>
-      <van-tabs v-model="chooseTab" color="#008489">
-        <van-tab title="北京">
+      <van-tabs color="#008489" animated>
+        <van-tab  title="北京" >
           <!-- 子组件 -->
           <bj></bj>
         </van-tab>
@@ -54,11 +54,14 @@
 <script>
 import bj from './bj.vue'
 import bjVue from './bj.vue';
+import home from "../../assets/api/home"
 export default {
   data(){
     return {
       value:"",
-      chooseTab:0
+      chooseTab:0,
+      home: new home(),
+      cities: null
     }
   },
   methods: {
@@ -68,6 +71,14 @@ export default {
   },
   components:{
     bj : bj
+  },
+  created() {
+    this.home.getCities().then(res=>{
+      if(res.code == 200){
+        this.cities = res.result;
+        console.log(this.cities);
+      }
+    })
   }
 }
 </script>

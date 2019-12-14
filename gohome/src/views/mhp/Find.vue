@@ -23,14 +23,14 @@
 <script lang="ts">
 import Vue from "vue";
 import city from "./city.vue";
-import config from '../../assets/config.ts';
+import config from "../../assets/config";
 export default Vue.extend({
   data() {
     return {
       images1: [
-        require("../../assets/images/find/swipe/1.jpg"),
-        require("../../assets/images/find/swipe/2.jpg"),
-        require("../../assets/images/find/swipe/3.jpg")
+        config.server + "images/swipe/1.jpg",
+        config.server + "images/swipe/2.jpg",
+        config.server + "images/swipe/3.jpg"
       ]
     };
   },
