@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="title">
-      <van-nav-bar title="登录" left-text="返回" left-arrow />
+      <van-nav-bar title="登录" left-text="返回" left-arrow @click-left="back"/>
     </div>
     <div class="inputArea">
       <h5>GoHome在线登录</h5>
@@ -22,7 +22,16 @@
           required
         />
       </van-cell-group>
-      <van-button plain type="info" block round @click="login">登录</van-button>
+      <van-button
+        plain
+        type="info"
+        block
+        round
+        @click="login"
+        :disabled="!isActive"
+      >
+        登录
+      </van-button>
       <div class="other-login">
         <a href="javascript:;" @click="otherLogin">其他登录方式</a>
         <a href="javascript:;" @click="register">注册新用户</a>
@@ -61,30 +70,60 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
+// import Vue from "vue";
+import User from "../../assets/api/user";
+import { Toast } from "vant";
+export default {
   data() {
     return {
       username: "",
       password: "",
-      show: false
+      show: false,
+      userApis: new User(),
+      isActive: true,
+      arr: [
+        // require("../")
+      ],
     };
   },
   methods: {
     //登录
-    login() {},
+    login() {
+      let myThis:any = this;
+      myThis.isActive = false;
+      myThis.userApis.login(myThis.username, myThis.password).then((res: any) => {
+        if (res.code == 200) {
+          Toast.success(res.msg);
+          sessionStorage.setItem("user",JSON.stringify(res.result));
+          sessionStorage.setItem("login_time",JSON.stringify(new Date().getTime()));
+          myThis.$router.push("/");
+          myThis.$store.commit("setIndexActive",3);
+          // 跳转到个人中心
+        } else if (res.code == 300) {
+          Toast.fail(res.msg);
+        }
+        myThis.isActive = true;
+      });
+    },
     //显示其他登录方式
     otherLogin(): void {
-      this.show = !this.show;
+      let myThis:any = this;
+      myThis.show = !myThis.show;
     },
     //注册
     register(): void {
-      this.$router.push("register");
+      let myThis:any = this;
+      myThis.$router.push("register");
     },
     //忘记密码
-    forget(): void {}
+    forget(): void {},
+    //返回首页
+    back(): void {
+      (this as any).$router.push("/");
+      (this as any).$store.commit("setIndexActive",0);
+    }
   }
-});
+};
 </script>
 
 <style scoped lang="scss">

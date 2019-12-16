@@ -42,7 +42,7 @@
         />
         <van-field
           v-model="email_text"
-          type="password"
+          type="text"
           label="邮箱验证码"
           clearable
           center
@@ -59,7 +59,7 @@
             {{ isSend ? "发送验证码" : countDown }}
           </van-button>
         </van-field>
-        <van-button plain type="info" block round @click="register">
+        <van-button plain type="info" block round @click="register" :disabled="!btnActive">
           提交注册
         </van-button>
       </van-cell-group>
@@ -68,10 +68,12 @@
 </template>
 
 <script lang="ts">
+import User from "../../assets/api/user";
 import { Toast } from "vant";
 export default {
   data() {
     return {
+      userApis: new User(),
       username: "",
       password: "",
       email: "",
@@ -81,7 +83,11 @@ export default {
       pwdStrongColor: 0,
       pwdStrongColors: ["#FF4500", "#F4A460", "#6495ED", "#32CD32"],
       isSend: true,
-      countDown: 60
+      btnActive: false,
+      countDown: 60,
+      arr: [
+        // require("../")
+      ]
     };
   },
   methods: {
@@ -90,11 +96,41 @@ export default {
       (this as any).$router.push("login");
     },
     //注册
-    register() {},
+    register() {
+      let myThis :any = this;
+      let obj = {
+        uname : myThis.username,
+        upwd : myThis.password,
+        email : myThis.email,
+        email_text : myThis.email_text
+      };
+      
+      (async ()=>{
+        var result = await myThis.userApis.register(obj);
+        if(result.code == 200){
+          Toast.success(result.msg);
+          myThis.$router.push("login");
+        }else{
+          myThis.email_text = "";
+          myThis.password = "";
+          Toast.fail(result.msg);
+          return;
+        }
+      })()
+
+    },
     //发送验证码
     sendYzm() {
-      (this as any).isSend = false;
-      Toast.success("发送成功!");
+      let myThis :any = this;
+
+      if(myThis.email.length < 8){
+        return;
+      }
+
+      myThis.isSend = false;
+      // Toast.success("发送成功!");
+
+      //开始计时
       let id = window.setInterval(() => {
         (this as any).countDown--;
         if ((this as any).countDown <= 0) {
@@ -102,6 +138,17 @@ export default {
           (this as any).isSend = true;
         }
       }, 1000);
+
+      //发送验证码
+      myThis.userApis.verification(myThis.email).then((res:any)=>{
+        if(res){
+          Toast.success("发送成功，请到邮箱查看!");
+          myThis.btnActive = true;
+        }else{
+          Toast.fail("发送错误，请检查邮箱或稍后再试!");
+        }
+      });
+
     }
   },
   watch: {
