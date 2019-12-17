@@ -22,9 +22,9 @@ const routes = [
   { path: "/Font", component: Font },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
+  { path: "/index", component: Index },
   { path: "/find", component: Find },
   { path: "/me", component: Me},
-  { path: "/index", component: Index},
   { path: "/todoParent", component: todoParent },
   { path: "/searchCity", component: searchCity }
 ];

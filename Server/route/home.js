@@ -49,7 +49,7 @@ router.get("/getHome", (req, res) => {
           })
         }
       }
-      res.send(result);
+      res.send({code: 200, msg: "查询成功", result: result});
     })
     
   })
