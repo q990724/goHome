@@ -198,11 +198,102 @@
               <div><van-rate v-model="value" readonly color="blue"/></div>
             </div>
           </div>
+          <div>
+            <div>
+              <div class="nbdy">
+                <div>
+                  <img class="nheard" src="../../assets/images/ak/heard1.jpg" alt="">
+                </div>
+                <div class="up">
+                  <p>明明</p>
+                  <p>2019年9月</p>
+                </div>
+              </div>
+              <div class="pinglun">
+                <p>性价比可以哈</p>
+              </div>
+            </div>
+          </div>
         </van-tab>
-        <van-tab title="可定日期">内容 1</van-tab>
-        <van-tab title="位置">内容 2</van-tab>
-        <van-tab title="须知">内容 1</van-tab>
-        <van-tab title="房东">内容 2</van-tab>
+        <van-tab title="可定日期">
+          <div>
+            <div class="dingdan">
+              <p>请输入旅程日期来查看确切的价格和可订状态</p>
+            </div>
+            <div>
+              <van-datetime-picker
+                v-model="currentDate"
+                type="datetime"
+                :min-date="minDate"
+                :max-date="maxDate"
+              />
+            </div>
+          </div>
+        </van-tab>
+        <van-tab title="位置">
+          <div>
+            <div class="cin">
+              <p>北京，中国</p>
+            </div>
+            <div class="mess">
+              <span>我们的小房子坐落于北京著名的文化胡同.</span>
+              <p>这条胡同里各色餐馆和店铺林立,可以满足多种味觉需求,多种购物需求.</p>
+            </div>
+            <div class="cin">
+              <p>出行信息</p>
+            </div>
+            <div class="mess">
+              <span>胡同东西向胡同口均通往最近的地铁站和附近景区,距离二环内诸多著名名胜古迹非常近..</span>
+              <p>距离地铁站五分钟.胡同口还有公交去往各个方向..</p>
+            </div>
+          </div>
+        </van-tab>
+        <van-tab title="须知">
+          <div class="xuzhi">
+            <div class="xhead">
+              <p>基本要求</p>
+            </div>
+            <div class="xmess">
+              <span>不适合儿童和婴幼儿入住</span>
+            </div>
+            <div>
+              <span><a href="javascript:;">房屋守则</a></span>
+            </div>
+            <div class="xhead">
+              <p>取消政策</p>
+            </div>
+            <div>
+              <span class="yue">12月19日下午2点前可免费取消<a href="javascript:;">查看完整详情</a></span>
+            </div>
+            <div class="xhead">
+              <p>安全须知</p>
+            </div>
+            <div class="xmess">
+              <span>该房源未安装烟雾报警器或一氧化碳报警器</span>
+            </div>
+            <div class="xhead">
+              <p>交易提示</p>
+            </div>
+            <div class="xmess">
+              <span>为了保护您的账号隐私和付款安全，请不要相信其它任何平台的折扣或礼金券代订，并始终在爱彼迎站内转账和交流。<a href="javascript:;">查看详情</a></span>
+            </div>
+          </div>
+        </van-tab>
+        <van-tab title="房东">
+          <div class="fangdong">
+            <div class="fs">
+              <p>名字</p>
+              <span>注册时间：2018年8月</span>
+            </div>
+            <div>
+              <img class="nheard" src="../../assets/images/ak/heard1.jpg" alt="">
+            </div>
+          </div>
+          <div class="xiaoxi">
+            //haha 
+            <a href="javascript:;">√</a>已验证
+          </div>
+        </van-tab>
       </van-tabs>
     </div>
   </div>
@@ -220,7 +311,12 @@ export default {
         require('../../assets/images/ak/p1.jpg'),
         require('../../assets/images/ak/p1.jpg'),
         require('../../assets/images/ak/p1.jpg')
-      ]
+      ],
+      minHour: 10,
+      maxHour: 20,
+      minDate: new Date(2010,1,1),
+      maxDate: new Date(2019, 12, 1),
+      currentDate: new Date()
     }
   },
   methods: {
@@ -232,11 +328,105 @@ export default {
     },
     onClick(name, title) {
       
-    }
+    },
+    onSearch(){},
+    onCancel(){},
+    
   }
 }
 </script>
 <style scoped>
+.xiaoxi{
+  padding: .3125rem 1.25rem;
+}
+.xiaoxi>a{
+  display: block;
+  background: orange;
+  width: 10%;
+
+}
+.fs>p{
+  font-size: 1.125rem;
+  color: #484848;
+  margin-bottom: .3125rem;
+}
+.fangdong{
+  display: flex;
+  justify-content: space-between;
+  padding: .3125rem  1.25rem;
+}
+.yue{
+  font-size:1rem;
+  color: #103;
+  font-weight: 400;
+}
+span>a{
+  color: rgb(0, 132, 137) ;
+  font-size:1.25rem;
+  font-weight: 400;
+}
+.xmess>span{
+  font-size: 1.25rem;
+  color: #808080;
+  padding-bottom:.3125rem;
+}
+.xhead>p{
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: .3125rem;
+  margin-top: 1.25rem;
+}
+.xuzhi{
+  margin-left:.9375rem;
+}
+.mess>p{
+  margin-left: 1.25rem;
+  font-size: 1rem;
+  color: #808080;
+  padding-bottom: .3125rem;
+}
+.mess>span{
+  display: block;
+  margin-left: 1.25rem;
+  font-size: 1rem;
+  color: #808080;
+  padding-bottom: .3125rem;
+}
+.cin>p{
+  font-size: 1.25rem;
+  padding-left: 1.25rem;
+  margin-bottom: .9375rem;
+}
+.dingdan>p{
+  margin-top: .3125rem;
+  margin-bottom: .625rem;
+  color:rgb(72, 72, 72) !important;
+  font-size: 1rem;
+  padding-left: .9375rem;
+}
+.pinglun>p{
+  font-size:1.25rem;
+  color: #808080;
+  padding-left: 1.875rem;
+}
+.up{
+  margin-right: 220px;
+}
+.up>p:first-child{
+  font-size:1.375rem;
+  font-weight: 600;
+}
+.nbdy{
+  display: flex;
+  justify-content: space-between;
+  padding: .3125rem 1.25rem;
+  margin-bottom: .625rem;
+}
+.nheard{
+  border-radius: 50%;
+  width:3.125rem;
+  height: 3.125rem;
+}
 .miaoshi{
   display: flex;
   justify-content: space-between;

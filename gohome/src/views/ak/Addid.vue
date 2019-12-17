@@ -196,16 +196,17 @@ export default {
 }
 .Image{text-align: center}
 .Img{
-  width: 21.374046rem;
+  width: 25.374046rem;
   height: 15.877863rem;
   border-radius: .305344rem;
 }
 .firstTitle{
   margin: 0;padding: 0;
   font-size:1.221374rem;
-  position: absolute;
+  text-align: left;
   padding-left: .916031rem;
   font-weight: bold;
+  margin-bottom: .5rem;
 }
 .lastTitle{
   font-size:.977099rem;
