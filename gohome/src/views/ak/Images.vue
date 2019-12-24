@@ -289,12 +289,69 @@
               <img class="nheard" src="../../assets/images/ak/heard1.jpg" alt="">
             </div>
           </div>
-          <div class="xiaoxi">
-            //haha 
-            <a href="javascript:;">√</a>已验证
+          <div class="ping">
+            <div class="xiaoxi">
+              <a href="javascript:;">188</a>
+              <span>评论条数</span>
+            </div>
+            <div class="xiaoxi">
+              <a href="javascript:;">√</a>
+              <span>已验证</span>
+            </div>
+          </div>
+          <div class="btn1">
+            <button>联系房东</button>
+          </div>
+          <div class="jieshao">
+            <div>
+              <p>自我介绍</p>
+            </div>
+            <div class="pan">
+              <span>
+               热爱旅行,热爱书籍,喜爱花花草草,喜欢猫猫狗狗,一个普普通通的人,拥有一颗上进拼搏的心,希望通过自己的设计,自己的审美布置,自己的辛勤汗水,打造出适合千千万万普通家庭的朋友,出门在外也能有自在舒适的居住环境,一个共享的家｡
+              </span><br>
+              <span>
+                这些民宿里的每一件生活物品,床上用品 ,都是我自己用心去比较性价比,认真的…
+              </span>
+            </div>
+            <a class="aa" href="javascript:;">查看更多</a>
+          </div>
+          <div class="btn1">
+            <button>联系房东</button>
+          </div>
+          <div class="jieshao">
+            <div>
+              <p>与房客的互动</p>
+            </div>
+            <div class="pan">
+              <span>
+               平时可以聊聊天 周末的话 有空可以一起出去玩～
+              </span><br>
+              <span>语言:</span>
+              <span class="neir">英文,english</span>
+              <br>
+              <span>回复率:</span>
+              <span class="neir">100%</span>
+              <br>
+              <span>恢复时间:</span>
+              <span class="neir">1小时以内</span>
+            </div>
+          </div>
+          <van-divider />
+          <div class="jubao">
+            <a href="javascript:;">举报此房源</a>
           </div>
         </van-tab>
       </van-tabs>
+    </div>
+    <div class="last">
+      <div>
+        <p>￥133 <span>每晚</span></p>
+        <p>星星数量:<span>17条</span></p>
+      </div>
+      <div>
+        <button>申请预定</button>
+      </div>
     </div>
   </div>
 </template>
@@ -336,14 +393,74 @@ export default {
 }
 </script>
 <style scoped>
+.last{
+  margin-left: 20px;
+}
+.jubao{
+  margin-left: 20px;
+}
+.jubao>a{
+  display: block;
+  color: #008489;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.jieshao{
+  margin-left: 20px;
+}
+.aa{
+  display: block;
+  color: #008489;
+  font-size: 18px;
+  margin:10px 0; 
+}
+.pan>span{
+  font-size: 14px;
+  color: #808080;
+  line-height: 30px;
+}
+.jieshao>div>p{
+  font-size: 20px;
+  color: #484848;
+  margin-bottom: 10px;
+}
+.neir{
+  font-size: 18px;
+  color: #484848;
+}
+.btn1{
+  margin: 15px 20px;
+}
+.btn1>button{
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #008489;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+  border: 1px solid #008489;
+}
+.ping{
+  display: flex;
+  justify-content: space-around
+}
 .xiaoxi{
+  margin-left: -66px;
   padding: .3125rem 1.25rem;
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+}
+.xiaoxi>a span{
+  display: block;
+  
 }
 .xiaoxi>a{
-  display: block;
   background: orange;
-  width: 10%;
-
+  margin-right: 5px;
+  width: 30px;
+  text-align: center;
 }
 .fs>p{
   font-size: 1.125rem;
