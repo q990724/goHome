@@ -1,11 +1,11 @@
 <template>
   <div>
     <van-tabs v-model="active">
-      <van-tab class="Image" title="北京">
+      <van-tab v-for="(item,i) of result" :key="i" class="Image" :title="item.city_name">
         <div class="dex">
-          <div class="nw">
+          <div class="nw" v-for="(item,i) of result" :key="i" :title="item.city_name">
             <div>
-              <van-swipe @change="onChange">
+              <van-swipe @change="onChange" >
                 <van-swipe-item>
                   <img class="Img" src="../../assets/images/ak/p1.jpg" alt="">
                 </van-swipe-item>
@@ -25,7 +25,7 @@
           </div>
         </div>
       </van-tab>
-      <van-tab class="Image" title="上海">
+      <!-- <van-tab class="Image" title="上海">
         <div class="dex">
           <div class="nw">
             <div>
@@ -168,23 +168,34 @@
             <p class="lastTitle">时间的萨克的角度讲</p>
           </div>
         </div>
-      </van-tab>
+      </van-tab> -->
     </van-tabs>
   </div>
 </template>
 
 <script>
+import config from "../../assets/config.ts";
 export default {
   data() {
     return {
-      active: 0
+      active: 0,
+      config: config,
+      result : []
     }
   },
   methods: {
     onChange(index) {
       
     }
-  }
+  },
+  mounted() {
+    this.config.axios({
+      url: "/home/getCity"
+    }).then(res=>{
+      console.log(res.data.result);
+      this.result = res.data.result;
+    });
+  },
 
 }
 </script>

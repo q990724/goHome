@@ -344,12 +344,13 @@
         </van-tab>
       </van-tabs>
     </div>
+    <van-divider />
     <div class="last">
-      <div>
-        <p>￥133 <span>每晚</span></p>
-        <p>星星数量:<span>17条</span></p>
+      <div class="last_one">
+        <p class="price">￥133 <span>每晚</span></p>
+        <p>评价:<span>17条评价</span></p>
       </div>
-      <div>
+      <div class="btnn">
         <button>申请预定</button>
       </div>
     </div>
@@ -394,7 +395,37 @@ export default {
 </script>
 <style scoped>
 .last{
+  display: flex;
+  justify-content: space-between;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+.last_one{
   margin-left: 20px;
+}
+.btnn{
+  margin-right: 20px;
+}
+.price{
+  font-size: 22px;
+  color: #484848;
+  font-weight: 500;
+}
+.price>span{
+  font-size: 14px;
+
+}
+.btnn>button{
+  background: rgb(255, 90, 95);
+  color: #fff;
+  font-size: 20px;
+  padding: 0 10px;
+  line-height: 40px;
+  font-weight: 300;
+  border: 1px solid #f00;
+  border-radius: 4px;
 }
 .jubao{
   margin-left: 20px;
